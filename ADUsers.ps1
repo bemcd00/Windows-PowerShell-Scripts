@@ -20,7 +20,7 @@ Write-Output "List of Domain Users:`n"     #prints "List of Domain Users: "
 Write-Output "name"     #prints "name"
 Write-Output "----"     #prints "----"
 Get-ADGroupMember 'domain users' | Where-Object -Property name -ne 'krbtgt' | select name     #Gets the names of Users that are Domain Users
-#NumDU is a variable used to store the numbe of Domain Users
+#NumDU is a variable used to store the number of Domain Users
 $NumDU=(Get-ADGroupMember 'domain users' | Where-Object -Property name -ne 'krbtgt' | select name).count     #Counts how many users are Domain Users
 write-output "`nNumber of Domain Users: $NumDU"     #Prints out the number of Domain admins
 Write-Output "------------------------------"
